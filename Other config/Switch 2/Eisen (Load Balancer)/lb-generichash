@@ -1,0 +1,21 @@
+upstream worker_generic_hash {
+  hash $request_uri consistent;
+  server 192.180.3.1;
+  server 192.180.3.2;
+  server 192.180.3.3;
+}
+
+server {
+    listen 80;
+    server_name granz.channel.B04.com www.granz.channel.B04.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        proxy_pass http://worker_generic_hash;
+    }
+}
