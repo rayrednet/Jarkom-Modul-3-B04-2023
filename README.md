@@ -83,6 +83,7 @@ d. Pilih server type: Run this Docker container locally
   | Stark            | Client           | danielcristh0/debian-buster:1.1 | Dynamic        |
 
 ## Aura (DHCP Relay)
+```plaintext
 	# DHCP config for eth0
 		auto eth0
 		iface eth0 inet dhcp
@@ -191,20 +192,24 @@ Fern (Laravel worker)
 	auto eth0
 	iface eth0 inet dhcp
 	hwaddress ether a2:e5:59:6d:aa:80
-
+```
 ## Topologi dengan IP address yang telah ditentukan :
 
 <img width="305" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b3066f52-376b-4561-ad78-b29d9517c563">
 
-  Pada Aura (Router), angka terakhir oktet pada IP address tidak dapat .0 (menandakan network itu sendiri) dan .255 (untuk broadcast address) karena oktet tersebut reserved. Maka dari itu saya memilih oktet terakhir .100 dengan juga mempertimbangkan:
-    - Pada soal harus terdapat worker yang memiliki IP oktet terakhir .1
-      “ Kali ini, kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untuk worker PHP dan granz.channel.yyy.com untuk worker Laravel (0) mengarah pada worker yang memiliki IP [prefix IP].x.1.”
-    - IP oktet terakhir harus berada di luar range dari IP Client yang bersifat dynamic dengan range:
-      - Melalui switch 3: 192.180.3.16 - 192.180.3.32 dan 192.180.3.64 - 192.180.3.80
-      - Melalui switch 4: 192.180.4.12 - 192.180.4.20 dan 192.180.4.160 - 192.180.4.168
-  Berdasarkan ketentuan soal tersebut, angka untuk oktet 100 memenuhi syarat agar router dapat berjalan dengan baik. Pada node lainnya (Himmel, Heiter, Denken, Eisen, Frieren, Flamme, Fern, Lawine, Linie, dan Lugner), mereka memiliki IP dengan subnet                mask 255.255.255.0, dan gateway setiap node berkorelasi dengan interface IP address Aura (router) di subnet.
+```plaintext
+Pada Aura (Router), angka terakhir oktet pada IP address tidak dapat .0 (menandakan network itu sendiri) dan .255 (untuk broadcast address) karena oktet tersebut reserved. Maka dari itu saya memilih oktet terakhir .100 dengan juga mempertimbangkan:
+- Pada soal harus terdapat worker yang memiliki IP oktet terakhir .1
+“ Kali ini, kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untuk worker PHP dan granz.channel.yyy.com untuk worker Laravel (0) mengarah pada worker yang memiliki IP [prefix IP].x.1.”
+- IP oktet terakhir harus berada di luar range dari IP Client yang bersifat dynamic dengan range:
+- Melalui switch 3: 192.180.3.16 - 192.180.3.32 dan 192.180.3.64 - 192.180.3.80
+- Melalui switch 4: 192.180.4.12 - 192.180.4.20 dan 192.180.4.160 - 192.180.4.168
+Berdasarkan ketentuan soal tersebut, angka untuk oktet 100 memenuhi syarat agar router dapat berjalan dengan baik. Pada node lainnya (Himmel, Heiter, Denken, Eisen, Frieren, Flamme, Fern, Lawine, Linie, dan Lugner), mereka memiliki IP dengan subnet mask 255.255.255.0, dan gateway setiap node berkorelasi dengan interface IP address Aura (router) di subnet.
+```
 
 ## Konfigurasi /root/.bashrc setiap node
+
+```plaintext
 Aura (DHCP Relay)
 	iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.180.0.0/16
 	apt-get update
@@ -319,6 +324,7 @@ Switch 4
 	Fern (Laravel worker)
 		apt-get update
 		apt-get install htop
+```
 
 
 
