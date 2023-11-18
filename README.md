@@ -7,37 +7,36 @@
 | Immanuel Pascanov Samosir            | 5025211257 |
 
 ## Konfigurasi awal
-1.  Pertama harus buat image docker baru dari: danielcristh0/debian-buster:1.1
-   	Berikut langkah-langkahnya :
-  a. Pilih go to preferences
-  
+1.  Pertama kita harus membuat image docker baru dari: danielcristh0/debian-buster:1.1, Berikut langkah-langkahnya :
+
+	a. Pilih go to preferences  
   <img width="465" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/32db2e80-f87c-4285-aad0-a067de54914c">
 
-  b. Pilih docker
+	b. Pilih docker
 
   <img width="464" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/8a3fb943-7caf-4dae-ae5e-b5576403712b">
 
-  c. Pilih add docker container template
+  	c. Pilih add docker container template
 
   <img width="415" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/49b475a4-2c97-4e99-bb33-2d9239928fec">
 
-  d. Pilih server type: Run this Docker container locally
+	d. Pilih server type: Run this Docker container locally
 
   <img width="443" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b4051f3c-1591-405c-a82d-d13d1456ae0b">
 
-  e. Pilih Docker Virtual Machine: New Image, dan masukkan image danielcristh0/debian-buster:1.1
+  	e. Pilih Docker Virtual Machine: New Image, dan masukkan image danielcristh0/debian-buster:1.1
 
   <img width="438" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/342b019b-0a5b-422d-8e9e-6579a857cfec">
 
-  f. Isi container name: debian
+  	f. Isi container name: debian
 
   <img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b7ef8a48-3dbc-4501-90a2-bc1f1b952a25">
 
-  g. Pilih network adapters sebanyak 5, sebab di topologi bagian router (Aura) memiliki 5 kaki
+  	g. Pilih network adapters sebanyak 5, sebab di topologi bagian router (Aura) memiliki 5 kaki
 
   <img width="305" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7d868243-1c5e-4fd1-bcf4-ab3ae85258a6">
 
-  h. Pilih Add template
+ 	h. Pilih Add template
 
   <img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/66829a15-969b-40ed-a403-520da97efc49">
 
@@ -193,7 +192,7 @@ Fern (Laravel worker)
 	iface eth0 inet dhcp
 	hwaddress ether a2:e5:59:6d:aa:80
 
-## Berikut ini adalah gambar topologi dengan IP address yang telah ditentukan :
+## Topologi dengan IP address yang telah ditentukan :
 
 <img width="305" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b3066f52-376b-4561-ad78-b29d9517c563">
 
