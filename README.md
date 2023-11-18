@@ -7,7 +7,7 @@
 | Immanuel Pascanov Samosir            | 5025211257 |
 
 ## Konfigurasi awal
-### 1.  Pertama kita harus membuat image docker baru dari: danielcristh0/debian-buster:1.1, Berikut langkah-langkahnya :
+1.  Pertama kita harus membuat image docker baru dari: danielcristh0/debian-buster:1.1, Berikut langkah-langkahnya :
 
 a. Pilih go to preferences  
   <img width="465" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/32db2e80-f87c-4285-aad0-a067de54914c">
@@ -40,7 +40,7 @@ d. Pilih server type: Run this Docker container locally
 
   <img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/66829a15-969b-40ed-a403-520da97efc49">
 
-### 2. Kedua, buat topologi sesuai dengan soal sebagai berikut :
+2. Kedua, buat topologi sesuai dengan soal sebagai berikut :
    
    <img width="294" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ceb2bae8-a90f-45eb-a2f5-8120ecdb2030">
 
