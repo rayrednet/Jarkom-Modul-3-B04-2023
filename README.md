@@ -470,11 +470,11 @@ subnet 192.180.3.0 netmask 255.255.255.0 {
 ```
 ### Testing
 Berikut ini adalah IP yang diperoleh ketika client di switch3 dibuka :
-a. Revolte
-<img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7ae0d1c9-3a51-454e-9cb7-e35ce2d6681c">
+a. Revolte <br>
+![2 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0c2ff15a-dd07-43fa-96a5-dc99239c147d)
 
-b. Richter
-<img width="304" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/83875c6d-e7cd-4239-9dc0-9553541a0840">
+b. Richter <br>
+![2 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/73169fa0-d511-4b88-93be-839f26d33ba7)
 
 ### ⭐ Nomor 3
 ### Soal
@@ -503,11 +503,11 @@ subnet 192.180.4.0 netmask 255.255.255.0 {
 ```
 ### Testing
 Berikut ini adalah IP yang diperoleh ketika client di switch 4 dibuka :
-a. Sein
-<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/48140d52-974f-4a88-80b1-f2042e16fa1a">
+a. Sein <br>
+![3 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/848e269c-0592-42ec-b1a1-830cefb80e50)
 
-b. Stark
-<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fb6a4d58-cd60-46d5-b98f-7dfeab2cecc6">
+b. Stark <br>
+![3 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/692c3f1b-af23-463a-a7db-cbe61b0208dc)
 
 ### ⭐ Nomor 4
 ### Soal
@@ -579,20 +579,20 @@ OPTIONS=""' > /etc/default/isc-dhcp-relay
 
 service isc-dhcp-relay start
 ```
-Selanjutnya, pada file /etc/sysctl.conf lakukan uncomment pada net.ipv4.ip_forward=1
-<img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/089c7078-9519-4ed9-b76a-05dfd371a05b">
+Selanjutnya, pada file /etc/sysctl.conf lakukan uncomment pada net.ipv4.ip_forward=1 <br>
+![4 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0489ce52-163e-450b-9acb-43f2f4c7ef10)
 
 ### Testing
 Untuk melakukan testing, kami mencoba melakukan ping dari client Stark
 ```
 ping riegel.canyon.b04.com
 ```
-<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/75cb3d26-61d9-43b8-850f-6bfec0a229a5">
+![4 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/c263db03-e49e-4298-b026-b86379f87796)
 
 ```
 ping granz.channel.b04.com 
 ```
-<img width="312" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ca2cc021-a208-412c-abc2-e24e5c61eed8">
+![4 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4b72954f-c984-44bc-86b9-3b2784c6b1a6)
 
 ### ⭐ Nomor 5
 ### Soal
@@ -603,30 +603,32 @@ Peminjaman melalui switch 3 selama 3 menit = 180s dan peminjaman melalui switch4
 
 ### Testing
 Berikut ini adalah hasil testing untuk lease time pada switch 3 dan switch 4:
-a. Switch 3 (Richter)
-<img width="304" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/97201521-07a8-4524-b219-4db50701ad0e">
+a. Switch 3 (Richter) <br>
+![5 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/64d21fff-d394-4098-835e-a6e80b5ed5ed)
 
-b. Switch 4 (Sein)
-<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/9828b62c-908b-4ca6-98d9-c24ea69488ef">
+b. Switch 4 (Sein) <br>
+![5 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1f793940-93a6-499a-9ddd-62e2dad8f786)
 
 Untuk menjawab soal nomor 1-5, kami gabungkan menjadi sebagai berikut:
-a. Masuk ke node heiter, himmel, dan aura
+a. Masuk ke node heiter, himmel, dan aura <br>
+![5 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/c2697840-01c3-4464-beb0-23c62a0514b4)
 
-b. Masuk ke node heiter dan lakukan bash no0.sh
+b. Masuk ke node heiter dan lakukan bash no0.sh <br>
+![5 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d754c07d-1f9f-40f4-896e-a5304def8e07)
 
-<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b764ff73-d953-4c04-a184-dede73171b1a">
+c. Masuk ke node himmel dan lakukan bash configDHCPserver.sh <br>
+![5 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/afc34d64-fc05-4988-8938-7ebeeb20203a)
 
-c. Masuk ke node himmel dan lakukan bash configDHCPserver.sh
-<img width="270" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fd2ee9a9-9a48-4be8-b42e-2dab6e108d4c">
 
-d. Masuk ke node aura dan lakukan bash configDHCPrelay
-<img width="215" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4f781e75-7caf-44c4-b61c-92bd23f52042">
+d. Masuk ke node aura dan lakukan bash configDHCPrelay <br>
+![5 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2101f0bf-ccbd-44f2-9197-64eaa3bdf230)
 
-e. Restart semua node worker (PHP dan Laravel) dan client
 
-<img width="281" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/69b52d74-9807-432c-9f40-ec5a3ebc9cd7">
+e. Restart semua node worker (PHP dan Laravel) dan client <br>
+![5 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b0346149-3005-4cc6-9a8d-bcb0b0d25628) <br>
+<br>
+![5 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d84a8c02-f2a5-400a-a330-2718d574b305)
 
-<img width="279" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f349ef52-c709-4dce-affb-f9e4f087a389">
 
 f. Jalankan perintah sesuai dengan testing untuk nomor 1-5
 
@@ -639,20 +641,20 @@ Jalankan no6.sh di Lawine, Linie, Lugner
 
 ### Testing
 Masukkan lynx 192.180.3.1, lynx 192.180.3.2, lynx 192.180.3.3 pada client di switch 3. Sebagai contoh kami menjalankan di Revolte sebagai berikut :
-a. Lawine (lynx 192.180.3.1)
-<img width="290" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bf52689d-b3fa-459e-b823-76452c74dcab">
+a. Lawine (lynx 192.180.3.1) <br>
+![6 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/19401165-5c2c-499d-96f0-7d54802bad3c)
+<br>
+![6 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/6bf1835a-8cd8-461d-a7cd-b422d8e82627)
 
-<img width="283" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3449f03d-c7e2-486a-8d07-263d22528404">
+b. Linie (lynx 192.180.3.2) <br>
+![6 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1b31e92a-9197-4a4f-af5c-06feb24345d1)
+<br>
+![6 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4d578806-8149-46e0-a702-6a66eec53824)
 
-b. Linie (lynx 192.180.3.2)
-<img width="285" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bc160189-a3e6-466c-b19a-3717d4795a8a">
-
-<img width="283" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2a825f74-2ecf-4b35-b23d-4483130701f3">
-
-c. Lugner (lynx 192.180.3.3)
-<img width="284" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0eea7cde-a7fe-4feb-8006-4ca193f44ab3">
-
-<img width="288" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3c2677dd-fbb5-4afc-bd58-ad8720845a0b">
+c. Lugner (lynx 192.180.3.3) <br>
+![6 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/a0fa4110-e613-460e-b4ea-dbaf78bc164c)
+<br>
+![6 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/e41d57ac-bf48-4e04-a703-d44c1f7eba1b)
 
 ### ⭐ Nomor 7
 ### Soal
@@ -666,18 +668,17 @@ aturlah agar Eisen dapat bekerja dengan maksimal, lalu lakukan testing dengan 10
 
 ### Jawaban
 Tahapan pengerjaan:
-a. Masuk ke node Heiter dan bash no7.sh
-<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f4f960f0-896f-4eb0-8acf-eb858f19d0a7">
+a. Masuk ke node Heiter dan bash no7.sh <br>
+![7 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/e540ef0d-1d24-4700-9b3a-981b0064426b)
 
-b. Masuk ke node eisen, lakukan bash no8-roundrobin.sh
-<img width="165" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/07293372-1234-4103-bfba-4e51d74f89c8">
+b. Masuk ke node eisen, lakukan bash no8-roundrobin.sh <br>
+![7 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/595a3a2e-7456-46f8-ab8a-f400a36d873a)
 
 ### Testing 
-Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 http://www.granz.channel.B04.com/
-<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/a898f927-d7a7-4680-a4cf-29caaa3f0201">
-
-;
-<img width="308" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/cf0209b0-e980-4c25-8501-d1d2168f189b">
+Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 http://www.granz.channel.B04.com/ <br>
+![7 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/c9659041-0c6e-4ec5-940d-eed623bbe4bc)
+<br>
+![7 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/01588075-5bd2-4e27-aa5e-1524d9ee8ea8)
 
 ### ⭐ Nomor 8
 ### Soal
@@ -691,16 +692,22 @@ d. Analisis
 
 ### Jawaban
 Tahapan pengerjaan:
-a. Masuk ke node eisen, lakukan bash no8-roundrobin.sh
-
-
+a. Masuk ke node eisen, lakukan bash no8-roundrobin.sh <br>
+![8 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/58fe9193-4533-4f4f-b513-0be96f95a36b)
 
 ### Testing
-a. Masuk ke client Revolte dan lakukan ab -n 200 -c 10 http://www.granz.channel.B04.com/
+a. Masuk ke client Revolte dan lakukan ab -n 200 -c 10 http://www.granz.channel.B04.com/ <br>
+![8 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/23a542e1-0b3c-401c-acc4-1b102f400515)
+
 b. Masukkan htop di setiap worker PHP
-- Lawine
-- Linie
-- Lugner
+- Lawine <br>
+![8 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/24e1e863-019b-4a1b-b59b-0340456d8346)
+
+- Linie <br>
+![8 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/23012ad4-2384-48f8-a891-a4dd09b35294)
+
+- Lugner <br>
+![8 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/9aa574d4-08ca-460b-95fa-358b54b46575)
 
 
 ### ⭐ Nomor 9
@@ -710,32 +717,53 @@ Dengan menggunakan algoritma Round Robin, lakukan testing dengan menggunakan 3 w
 ### Jawaban
 
 Langkah pengerjaan:
-a. Masuk ke node eisen, jalankan bash no8-roundrobin.sh
-b.
+a. Masuk ke node eisen, jalankan bash no8-roundrobin.sh <br>
+![9 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1fc7bd32-a04a-463f-bde7-bcb32883da3c)
 
 ### Testing
 #### 3 worker
-a. Masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
-b. htop pada Lugner
-c. htop pada Linie
-d. htop pada Lawine
+a. Masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/ <br>
+![9 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/50f7b782-0d33-4ba6-8ab9-b18138fea4c5)
+
+b. htop pada Lugner <br>
+![9 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4cf68eef-3202-4d91-addc-a88b31d2a7a8)
+
+c. htop pada Linie <br>
+![9 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/03043788-b5c5-485a-b2d4-8facdcd768f2)
+
+d. htop pada Lawine <br>
+![9 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/68eb8a89-6962-4fdf-ae43-31b0b8ec6354)
 
 #### 2 worker
-Matikan salah satu worker dari ketiga worker, sebagai contoh Lugner jalankan service nginx stop
-
+Matikan salah satu worker dari ketiga worker, sebagai contoh Lugner jalankan service nginx stop <br>
+![9 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ec7ff925-a9de-4b6d-9487-025d9d6d5f62)
 
 Sehingga worker yang berjalan hanya Lawine dan Linie
 
-Selanjutnya masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
+Selanjutnya masuk ke client Revolte jalankan :
+```
+ab -n 100 -c 10 http://www.granz.channel.B04.com/
+```
+![9 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f9d0deb7-c364-4c71-a912-c03cde15ff2d)
 
-a. Htop pada Lawine
 
-b. Htop pada Linie
+a. Htop pada Lawine <br>
+![9 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fc7d811d-909e-436c-a568-60225a4f94d6)
+
+
+b. Htop pada Linie <br>
+![9 9](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3c0137cd-c4f8-498e-9b8d-7df6b4d9bf95)
+
 
 #### 1 worker
-Matikan 1 worker lagi, sebagai contoh Linie. Sehingga worker yang hidup hanya Lawine
+Matikan 1 worker lagi, sebagai contoh Linie. Sehingga worker yang hidup hanya Lawine <br>
+![9 10](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7dfae745-3499-431a-946d-2c1aacdcadbd)
 
-Selanjutnya masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
+Selanjutnya masuk ke client Revolte jalankan :
+```
+ab -n 100 -c 10 http://www.granz.channel.B04.com/
+```
+
 
 a. Htop pada Lawine
 
