@@ -445,6 +445,8 @@ ping riegel.canyon.b04.com
 ```
 ping granz.channel.b04.com
 ```
+![1 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f30f36ac-103c-4e02-9438-fa4dea775b14)
+
 <img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2762efc5-47b0-4b74-90ca-de31d89a06e5">
 
 ### ⭐ Nomor 2
