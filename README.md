@@ -441,11 +441,11 @@ Untuk mengujinya kami melakukan testing di client Richter dengan menjalankan 2 p
 ```
 ping riegel.canyon.b04.com
 ```
-![1 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bde011cd-86b6-4394-9e79-7e980119fd70)
+![1.1](images/1.1.png)
 ```
 ping granz.channel.b04.com
 ```
-![1 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f30f36ac-103c-4e02-9438-fa4dea775b14)
+![1.2](images/1.2.png)
 
 
 ### ⭐ Nomor 2
