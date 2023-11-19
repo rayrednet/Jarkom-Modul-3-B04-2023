@@ -420,6 +420,267 @@ www             IN      CNAME   riegel.canyon.B04.com.
 service bind9 restart
 ```
 
+Selanjutnya lakukan hal ini di himmel (configDHCPserver.sh) :
+```
+cp dhcpd.conf /etc/dhcp/dhcpd.conf
+cp isc-dhcp-server /etc/default/isc-dhcp-server
+
+
+service isc-dhcp-server restart
+service isc-dhcp-server status
+```
+
+Kemudian jalankan ini di dalam aura (configDHCPrelay.sh)
+```
+cp sysctl.conf /etc/sysctl.conf
+cp isc-dhcp-relay /etc/default/isc-dhcp-relay
+service isc-dhcp-relay restart
+```
+### Testing
+Untuk mengujinya kami melakukan testing di client Richter dengan menjalankan 2 perintah berikut:
+```
+ping riegel.canyon.b04.com
+```
+<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1b8cc0bb-ea43-49c0-b5e9-6825c3bf0409">
+
+```
+ping granz.channel.b04.com
+```
+<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2762efc5-47b0-4b74-90ca-de31d89a06e5">
+
+### ⭐ Nomor 2
+### Soal
+Client yang melalui Switch3 mendapatkan range IP dari 192.180.3.16 - 192.180.3.32 dan 192.180.3.64 - 192.180.3.80
+
+### Jawaban
+Lakukan konfigurasi pada DHCP Server (Himmel) :
+```
+echo 'subnet 192.180.1.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.2.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.3.0 netmask 255.255.255.0 {
+    range 192.180.3.16 192.180.3.32;
+    range 192.180.3.64 192.180.3.80;
+    option routers 192.180.3.0;
+}' > /etc/dhcp/dhcpd.con
+```
+### Testing
+Berikut ini adalah IP yang diperoleh ketika client di switch3 dibuka :
+a. Revolte
+<img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7ae0d1c9-3a51-454e-9cb7-e35ce2d6681c">
+
+b. Richter
+<img width="304" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/83875c6d-e7cd-4239-9dc0-9553541a0840">
+
+### ⭐ Nomor 3
+### Soal
+Client yang melalui Switch4 mendapatkan range IP dari 192.180.4.12 - 192.180.4.20 dan 192.180.4.160 - 192.180.4.168
+
+### Jawaban
+Lakukan konfigurasi pada DHCP Server (Himmel) :
+```
+echo 'subnet 192.180.1.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.2.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.3.0 netmask 255.255.255.0 {
+    range 192.180.3.16 192.180.3.32;
+    range 192.180.3.64 192.180.3.80;
+    option routers 192.180.3.0;
+}
+
+subnet 192.180.4.0 netmask 255.255.255.0 {
+    range 192.180.4.12 192.180.4.20;
+    range 192.180.4.160 192.180.4.168;
+    option routers 192.180.4.0;
+} ' > /etc/dhcp/dhcpd.conf
+```
+### Testing
+Berikut ini adalah IP yang diperoleh ketika client di switch 4 dibuka :
+a. Sein
+<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/48140d52-974f-4a88-80b1-f2042e16fa1a">
+
+b. Stark
+<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fb6a4d58-cd60-46d5-b98f-7dfeab2cecc6">
+
+### ⭐ Nomor 4
+### Soal
+Client mendapatkan DNS dari Heiter dan dapat terhubung dengan internet melalui DNS tersebut
+
+### Jawaban
+Agar dapat terhubung ke DNS kita harus menambahkan konfigurasi berikut:
+```
+subnet 192.180.3.0 netmask 255.255.255.0 {
+    ...
+    option broadcast-address 192.180.3.255;
+    option domain-name-servers 192.180.1.2;
+    ...
+}
+
+subnet 192.180.4.0 netmask 255.255.255.0 {
+    option broadcast-address 192.180.4.255;
+    option domain-name-servers 192.180.1.2;
+}
+```
+
+Jalankan bash script berikut di dalam DHCP Server (Himmel)
+
+```
+echo 'subnet 192.180.1.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.2.0 netmask 255.255.255.0 {
+}
+
+subnet 192.180.3.0 netmask 255.255.255.0 {
+    range 192.180.3.16 192.180.3.32;
+    range 192.180.3.64 192.180.3.80;
+    option routers 192.180.3.0;
+    option broadcast-address 192.180.3.255;
+    option domain-name-servers 192.180.1.2;
+}
+
+subnet 192.180.4.0 netmask 255.255.255.0 {
+    range 192.180.4.12 192.180.4.20;
+    range 192.180.4.160 192.180.4.168;
+    option routers 192.180.4.0;
+    option broadcast-address 192.180.4.255;
+    option domain-name-servers 192.180.1.2;
+} ' > /etc/dhcp/dhcpd.conf
+
+service isc-dhcp-server start
+```
+
+Kemudian, jalankan command ini di dalam DHCP Relay (Aura)
+
+```
+echo '# Defaults for isc-dhcp-relay initscript
+# sourced by /etc/init.d/isc-dhcp-relay
+# installed at /etc/default/isc-dhcp-relay by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+# What servers should the DHCP relay forward requests to?
+SERVERS="192.180.1.1"
+
+# On what interfaces should the DHCP relay (dhrelay) serve DHCP requests?
+INTERFACES="eth1 eth2 eth3 eth4"
+
+# Additional options that are passed to the DHCP relay daemon?
+OPTIONS=""' > /etc/default/isc-dhcp-relay
+
+service isc-dhcp-relay start
+```
+Selanjutnya, pada file /etc/sysctl.conf lakukan uncomment pada net.ipv4.ip_forward=1
+<img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/089c7078-9519-4ed9-b76a-05dfd371a05b">
+
+### Testing
+Untuk melakukan testing, kami mencoba melakukan ping dari client Stark
+```
+ping riegel.canyon.b04.com
+```
+<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/75cb3d26-61d9-43b8-850f-6bfec0a229a5">
+
+```
+ping granz.channel.b04.com 
+```
+<img width="312" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ca2cc021-a208-412c-abc2-e24e5c61eed8">
+
+### ⭐ Nomor 5
+### Soal
+Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch3 selama 3 menit sedangkan pada client yang melalui Switch4 selama 12 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 96 menit
+
+### Jawaban
+Peminjaman melalui switch 3 selama 3 menit = 180s dan peminjaman melalui switch4 selama 12 menit = 720s
+
+### Testing
+Berikut ini adalah hasil testing untuk lease time pada switch 3 dan switch 4:
+a. Switch 3 (Richter)
+<img width="304" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/97201521-07a8-4524-b219-4db50701ad0e">
+
+b. Switch 4 (Sein)
+<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/9828b62c-908b-4ca6-98d9-c24ea69488ef">
+
+Untuk menjawab soal nomor 1-5, kami gabungkan menjadi sebagai berikut:
+a. Masuk ke node heiter, himmel, dan aura
+
+b. Masuk ke node heiter dan lakukan bash no0.sh
+
+<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b764ff73-d953-4c04-a184-dede73171b1a">
+
+c. Masuk ke node himmel dan lakukan bash configDHCPserver.sh
+<img width="270" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fd2ee9a9-9a48-4be8-b42e-2dab6e108d4c">
+
+d. Masuk ke node aura dan lakukan bash configDHCPrelay
+<img width="215" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4f781e75-7caf-44c4-b61c-92bd23f52042">
+
+e. Restart semua node worker (PHP dan Laravel) dan client
+
+<img width="281" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/69b52d74-9807-432c-9f40-ec5a3ebc9cd7">
+
+<img width="279" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f349ef52-c709-4dce-affb-f9e4f087a389">
+
+f. Jalankan perintah sesuai dengan testing untuk nomor 1-5
+
+### ⭐ Nomor 6
+### Soal
+Pada masing-masing worker PHP, lakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3
+
+### Jawaban
+Jalankan no6.sh di Lawine, Linie, Lugner
+
+### Testing
+Masukkan lynx 192.180.3.1, lynx 192.180.3.2, lynx 192.180.3.3 pada client di switch 3. Sebagai contoh kami menjalankan di Revolte sebagai berikut :
+a. Lawine (lynx 192.180.3.1)
+<img width="290" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bf52689d-b3fa-459e-b823-76452c74dcab">
+
+<img width="283" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3449f03d-c7e2-486a-8d07-263d22528404">
+
+b. Linie (lynx 192.180.3.2)
+<img width="285" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bc160189-a3e6-466c-b19a-3717d4795a8a">
+
+<img width="283" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2a825f74-2ecf-4b35-b23d-4483130701f3">
+
+c. Lugner (lynx 192.180.3.3)
+<img width="284" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0eea7cde-a7fe-4feb-8006-4ca193f44ab3">
+
+<img width="288" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3c2677dd-fbb5-4afc-bd58-ad8720845a0b">
+
+### ⭐ Nomor 7
+### Soal
+Kepala suku dari Bredt Region memberikan resource server sebagai berikut:
+```
+	a. Lawine, 4GB, 2vCPU, dan 80 GB SSD.
+	b. Linie, 2GB, 2vCPU, dan 50 GB SSD.
+	c. Lugner 1GB, 1vCPU, dan 25 GB SSD.
+```
+aturlah agar Eisen dapat bekerja dengan maksimal, lalu lakukan testing dengan 1000 request dan 100 request/second!
+
+### Jawaban
+Tahapan pengerjaan:
+a. Masuk ke node Heiter dan bash no7.sh
+<img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f4f960f0-896f-4eb0-8acf-eb858f19d0a7">
+
+b. Masuk ke node eisen, lakukan bash no8-roundrobin.sh
+<img width="165" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/07293372-1234-4103-bfba-4e51d74f89c8">
+
+### Testing 
+Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 http://www.granz.channel.B04.com/
+<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/a898f927-d7a7-4680-a4cf-29caaa3f0201">
+
+<img width="308" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/cf0209b0-e980-4c25-8501-d1d2168f189b">
+
+### ⭐ Nomor 8
+### Soal
+
+### Jawaban
 
 
 
@@ -433,4 +694,19 @@ service bind9 restart
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
 
