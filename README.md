@@ -10,57 +10,57 @@
 1.  Pertama kita harus membuat image docker baru dari: danielcristh0/debian-buster:1.1, Berikut langkah-langkahnya :
 
 a. Pilih go to preferences  
-  <img width="465" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/32db2e80-f87c-4285-aad0-a067de54914c">
+  ![konf](images/konf1.png)
 
 b. Pilih docker
 
-  <img width="464" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/8a3fb943-7caf-4dae-ae5e-b5576403712b">
+  ![konf](images/konf2.png)
 
 c. Pilih add docker container template
 
-  <img width="415" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/49b475a4-2c97-4e99-bb33-2d9239928fec">
+  ![konf](images/konf3.png)
 
 d. Pilih server type: Run this Docker container locally
 
-  <img width="443" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b4051f3c-1591-405c-a82d-d13d1456ae0b">
+  ![konf](images/konf4.png)
 
   e. Pilih Docker Virtual Machine: New Image, dan masukkan image danielcristh0/debian-buster:1.1
 
-  <img width="438" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/342b019b-0a5b-422d-8e9e-6579a857cfec">
+  ![konf](images/konf5.png)
 
   f. Isi container name: debian
 
-  <img width="310" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b7ef8a48-3dbc-4501-90a2-bc1f1b952a25">
+  ![konf](images/konf6.png)
 
   g. Pilih network adapters sebanyak 5, sebab di topologi bagian router (Aura) memiliki 5 kaki
 
-  <img width="305" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7d868243-1c5e-4fd1-bcf4-ab3ae85258a6">
+  ![konf](images/konf7.png)
 
  h. Pilih Add template
 
-  <img width="309" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/66829a15-969b-40ed-a403-520da97efc49">
+  ![konf](images/konf8.png)
 
 2. Kedua, buat topologi sesuai dengan soal sebagai berikut :
    
-   <img width="294" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ceb2bae8-a90f-45eb-a2f5-8120ecdb2030">
+   ![konf](images/konf9.png)
 
      Tahapan:
 
    a. Buat node secara garis besarnya sebagai berikut
    
-     <img width="245" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/7830b803-f43a-4ed4-909f-c5070120ecaa">
+     ![konf](images/konf10.png)
 
    b. Ubah icon node sesuai dengan topologi pada soal
 
-     <img width="256" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/c081e3c0-b949-416a-9db6-0cb4d08f238b">
+     ![konf](images/konf11.png)
 
    c. Ubah nama node sesuai dengan soal
 
-     <img width="261" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/25513334-7910-4011-8b31-c19e5c7da01d">
+     ![konf](images/konf12.png)
 
    d. Hubungkan node ke node lain sesuai dengan topologi soal
 
-     <img width="278" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/30767f12-3a42-46bc-b041-44699ba802af">
+     ![konf](images/konf13.png)
 
    e. Selanjutnya, atur konfigurasi IP address sesuai dengan tabel
 
@@ -195,7 +195,7 @@ Fern (Laravel worker)
 ```
 ## Topologi dengan IP address yang telah ditentukan :
 
-<img width="305" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/b3066f52-376b-4561-ad78-b29d9517c563">
+![topologi](images/topologi.jpg)
 
 ```plaintext
 Pada Aura (Router), angka terakhir oktet pada IP address tidak dapat .0 (menandakan network itu sendiri) dan .255 (untuk broadcast address) karena oktet tersebut reserved. Maka dari itu saya memilih oktet terakhir .100 dengan juga mempertimbangkan:
@@ -763,6 +763,11 @@ Selanjutnya masuk ke client Revolte jalankan :
 ab -n 100 -c 10 http://www.granz.channel.B04.com/
 ```
 
+![9.11](images/9.11.png)
+
+htop pada Lawine
+
+![9.12](images/9.12.png)
 
 a. Htop pada Lawine
 
