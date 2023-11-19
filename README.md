@@ -326,6 +326,101 @@ Switch 4
 		apt-get install htop
 ```
 
+## Daftar Isi
+[Nomor 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-1) <br/>
+[Nomor 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-2) <br/>
+[Nomor 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-3) <br/>
+[Nomor 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-4) <br/>
+[Nomor 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-5) <br/>
+[Nomor 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-6) <br/>
+[Nomor 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-7) <br/>
+[Nomor 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-8) <br/>
+[Nomor 9](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-9) <br/>
+[Nomor 10](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-10) <br/>
+[Nomor 11](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-11) <br/>
+[Nomor 12](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-12) <br/>
+[Nomor 13](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-13) <br/>
+[Nomor 14](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-14) <br/>
+[Nomor 15](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-15) <br/>
+[Nomor 16](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-16) <br/>
+[Nomor 17](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-17) <br/>
+[Nomor 18](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-18) <br/>
+[Nomor 19](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-19) <br/>
+[Nomor 20](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/#-nomor-20) <br/>
+
+### ⭐ Nomor 1
+### Soal
+Lakukan konfigurasi sesuai dengan peta yang sudah diberikan. Setelah mengalahkan Demon King, perjalanan berlanjut. Kali ini, kalian diminta untuk melakukan register domain berupa riegel.canyon.B04.com untuk worker Laravel dan granz.channel.B04.com untuk worker PHP mengarah pada worker yang memiliki IP 192.180.x.1
+
+### Jawaban
+Pada soal kita diminta untuk register domain riegel.canyon.B04.com untuk worker Laravel dan granz.channel.B04.com untuk worker PHP yang mengarah ke worker dengan IP 192.180.x.1. Pada topologi yang dibuat, worker yang memiliki IP okter terakhir .1 adalah Lawine (PHP Worker: 192.180.3.1) dan Frieren (Laravel worker: 192.180.4.1). 
+
+Untuk melakukan perintah soal, kita harus melakukan konfigurasi pada DNS Server (Heiter) sebagai berikut (no0.sh):
+'''
+#!bin/bash
+
+
+cp named.conf.options /etc/bind/named.conf.options
+
+
+echo '
+zone "granz.channel.B04.com" {
+    type master;
+    file "/etc/bind/granz/granz.channel.B04.com";
+};' >> /etc/bind/named.conf.local
+
+
+mkdir -p /etc/bind/granz
+
+
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     channel.B04.com. root.channel.B04.com. (
+                        2023131101      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@               IN      NS      granz.channel.B04.com.
+@               IN      A       192.180.3.1       ; IP worker PHP di switch 3
+www             IN      CNAME   granz.channel.B04.com.
+' > /etc/bind/granz/granz.channel.B04.com
+
+
+echo '
+zone "riegel.canyon.B04.com" {
+    type master;
+    file "/etc/bind/riegel/riegel.canyon.B04.com";
+};' >> /etc/bind/named.conf.local
+
+
+mkdir -p /etc/bind/riegel
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     canyon.B04.com. root.canyon.B04.com. (
+                        2023131101      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@               IN      NS      riegel.canyon.B04.com.
+@               IN      A       192.180.4.1       ; IP worker Laravel di switch 4
+www             IN      CNAME   riegel.canyon.B04.com.
+' >  /etc/bind/riegel/riegel.canyon.B04.com
+
+
+service bind9 restart
+'''
+
+
 
 
 
