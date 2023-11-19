@@ -675,15 +675,16 @@ b. Masuk ke node eisen, lakukan bash no8-roundrobin.sh
 Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 http://www.granz.channel.B04.com/
 <img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/a898f927-d7a7-4680-a4cf-29caaa3f0201">
 
+;
 <img width="308" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/cf0209b0-e980-4c25-8501-d1d2168f189b">
 
 ### ⭐ Nomor 8
 ### Soal
 Karena diminta untuk menuliskan grimoire, buatlah analisis hasil testing dengan 200 request dan 10 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
-	a. Nama Algoritma Load Balancer
-	b. Report hasil testing pada Apache Benchmark
-	c. Grafik request per second untuk masing masing algoritma. 
-	d. Analisis
+a. Nama Algoritma Load Balancer
+b. Report hasil testing pada Apache Benchmark
+c. Grafik request per second untuk masing masing algoritma. 
+d. Analisis
 
 
 ### Jawaban
