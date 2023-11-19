@@ -679,9 +679,91 @@ Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 h
 
 ### ⭐ Nomor 8
 ### Soal
+Karena diminta untuk menuliskan grimoire, buatlah analisis hasil testing dengan 200 request dan 10 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
+	a. Nama Algoritma Load Balancer
+	b. Report hasil testing pada Apache Benchmark
+	c. Grafik request per second untuk masing masing algoritma. 
+	d. Analisis
+
 
 ### Jawaban
 
+### ⭐ Nomor 9
+### Soal
+Dengan menggunakan algoritma Round Robin, lakukan testing dengan menggunakan 3 worker, 2 worker, dan 1 worker sebanyak 100 request dengan 10 request/second, kemudian tambahkan grafiknya pada grimoire.
+
+### Jawaban
+
+### ⭐ Nomor 10
+### Soal
+Selanjutnya coba tambahkan konfigurasi autentikasi di LB dengan dengan kombinasi username: “netics” dan password: “ajkyyy”, dengan yyy merupakan kode kelompok. Terakhir simpan file “htpasswd” nya di /etc/nginx/rahasisakita/
+
+### Jawaban
+
+### ⭐ Nomor 11
+### Soal
+Lalu buat untuk setiap request yang mengandung /its akan di proxy passing menuju halaman https://www.its.ac.id
+
+### Jawaban
+
+### ⭐ Nomor 12
+### Soal
+Selanjutnya LB ini hanya boleh diakses oleh client dengan IP [Prefix IP].3.69, [Prefix IP].3.70, [Prefix IP].4.167, dan [Prefix IP].4.168.
+
+### Jawaban
+
+### ⭐ Nomor 13
+### Soal
+Semua data yang diperlukan, diatur pada Denken dan harus dapat diakses oleh Frieren, Flamme, dan Fern.
+
+### Jawaban
+
+### ⭐ Nomor 14
+### Soal
+Frieren, Flamme, dan Fern memiliki Riegel Channel sesuai dengan quest guide berikut. Jangan lupa melakukan instalasi PHP8.0 dan Composer
+
+### Jawaban
+
+### ⭐ Nomor 15
+### Soal
+Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire POST /auth/register
+
+### Jawaban
+
+### ⭐ Nomor 16
+### Soal
+Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire POST /auth/login
+
+### Jawaban
+
+### ⭐ Nomor 17
+### Soal
+Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire GET /me
+
+### Jawaban
+
+### ⭐ Nomor 18
+### Soal
+Untuk memastikan ketiganya bekerja sama secara adil untuk mengatur Riegel Channel maka implementasikan Proxy Bind pada Eisen untuk mengaitkan IP dari Frieren, Flamme, dan Fern.
+
+### Jawaban
+
+### ⭐ Nomor 19
+### Soal
+Untuk meningkatkan performa dari Worker, coba implementasikan PHP-FPM pada Frieren, Flamme, dan Fern. Untuk testing kinerja naikkan 
+- pm.max_children
+- pm.start_servers
+- pm.min_spare_servers
+- pm.max_spare_servers
+sebanyak tiga percobaan dan lakukan testing sebanyak 100 request dengan 10 request/second kemudian berikan hasil analisisnya pada Grimoire.
+
+### Jawaban
+
+### ⭐ Nomor 20
+### Soal
+Nampaknya hanya menggunakan PHP-FPM tidak cukup untuk meningkatkan performa dari worker maka implementasikan Least-Conn pada Eisen. Untuk testing kinerja dari worker tersebut dilakukan sebanyak 100 request dengan 10 request/second.
+
+### Jawaban
 
 
 
