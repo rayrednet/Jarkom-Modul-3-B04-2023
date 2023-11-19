@@ -356,7 +356,7 @@ Lakukan konfigurasi sesuai dengan peta yang sudah diberikan. Setelah mengalahkan
 Pada soal kita diminta untuk register domain riegel.canyon.B04.com untuk worker Laravel dan granz.channel.B04.com untuk worker PHP yang mengarah ke worker dengan IP 192.180.x.1. Pada topologi yang dibuat, worker yang memiliki IP okter terakhir .1 adalah Lawine (PHP Worker: 192.180.3.1) dan Frieren (Laravel worker: 192.180.4.1). 
 
 Untuk melakukan perintah soal, kita harus melakukan konfigurasi pada DNS Server (Heiter) sebagai berikut (no0.sh):
-'''
+```
 #!bin/bash
 
 
@@ -418,7 +418,7 @@ www             IN      CNAME   riegel.canyon.B04.com.
 
 
 service bind9 restart
-'''
+```
 
 
 
