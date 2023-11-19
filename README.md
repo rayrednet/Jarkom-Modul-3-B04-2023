@@ -681,19 +681,62 @@ Sebagai contoh lakukan testing di Revolte, jalankan perintah ab -n 1000 -c 100 h
 ### ⭐ Nomor 8
 ### Soal
 Karena diminta untuk menuliskan grimoire, buatlah analisis hasil testing dengan 200 request dan 10 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
+```
 a. Nama Algoritma Load Balancer
 b. Report hasil testing pada Apache Benchmark
 c. Grafik request per second untuk masing masing algoritma. 
 d. Analisis
-
+```
 
 ### Jawaban
+Tahapan pengerjaan:
+a. Masuk ke node eisen, lakukan bash no8-roundrobin.sh
+
+
+
+### Testing
+a. Masuk ke client Revolte dan lakukan ab -n 200 -c 10 http://www.granz.channel.B04.com/
+b. Masukkan htop di setiap worker PHP
+- Lawine
+- Linie
+- Lugner
+
 
 ### ⭐ Nomor 9
 ### Soal
 Dengan menggunakan algoritma Round Robin, lakukan testing dengan menggunakan 3 worker, 2 worker, dan 1 worker sebanyak 100 request dengan 10 request/second, kemudian tambahkan grafiknya pada grimoire.
 
 ### Jawaban
+
+Langkah pengerjaan:
+a. Masuk ke node eisen, jalankan bash no8-roundrobin.sh
+b.
+
+### Testing
+#### 3 worker
+a. Masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
+b. htop pada Lugner
+c. htop pada Linie
+d. htop pada Lawine
+
+#### 2 worker
+Matikan salah satu worker dari ketiga worker, sebagai contoh Lugner jalankan service nginx stop
+
+
+Sehingga worker yang berjalan hanya Lawine dan Linie
+
+Selanjutnya masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
+
+a. Htop pada Lawine
+
+b. Htop pada Linie
+
+#### 1 worker
+Matikan 1 worker lagi, sebagai contoh Linie. Sehingga worker yang hidup hanya Lawine
+
+Selanjutnya masuk ke client Revolte jalankan ab -n 100 -c 10 http://www.granz.channel.B04.com/
+
+a. Htop pada Lawine
 
 ### ⭐ Nomor 10
 ### Soal
