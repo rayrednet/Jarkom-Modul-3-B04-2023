@@ -1,4 +1,4 @@
-# Laporan Resmi Praktikum Jaringan Komputer Modul 3 - DHCP & Reverse Proxy
+![17 12](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/5857dbb4-7fc7-4225-b31e-bbbeca93c82e)![12 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f2ef1e30-d40f-48c4-bddc-b3777f12b400)# Laporan Resmi Praktikum Jaringan Komputer Modul 3 - DHCP & Reverse Proxy
 
 ## Identitas Kelompok
 | Nama                                 | NRP        |
@@ -743,55 +743,197 @@ a. Htop pada Lawine
 ### Soal
 Selanjutnya coba tambahkan konfigurasi autentikasi di LB dengan dengan kombinasi username: “netics” dan password: “ajkyyy”, dengan yyy merupakan kode kelompok. Terakhir simpan file “htpasswd” nya di /etc/nginx/rahasisakita/
 
-### Jawaban
+### Testing
+Masuk ke node eisen dan ketik secara manual
+```
+mkdir /etc/nginx/rahasisakita
+htpasswd -c /etc/nginx/rahasisakita/htpasswd netics
+```
+![10 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/992c4613-3e1e-4524-bbec-1f3694881b69)
+
+Masukkan password ajkB04
+![10 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/65ff6e67-243d-4804-86f8-3d12fa7afb9b)
+
+Kemudian bash no10.sh di Eisen
+![10 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1255abf6-9753-448b-a732-aec7d3709125)
+
+Masuk ke dalam client Revolte untuk testing, lakukan lynx www.granz.channel.B04.com
+![10 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ce278ec9-bbd8-49a4-9e46-ba6a134b8aca)
+
+Isi dengan netics
+![10 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/8e58dac3-48c0-4501-9095-90e53f3631c6)
+
+Selanjutnya masukkan password ajkB04
+![10 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/a11c682b-7fc6-45a5-9e0c-66cbf92e6153)
+
+![10 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/adcd4509-64a4-4ef7-9228-5a1f65bad016)
+
+![10 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/2a1d2f44-d2a8-408e-ab15-e55242060161)
+
+![10 9](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/118757d5-a449-4ca9-a643-864d15474f15)
+
 
 ### ⭐ Nomor 11
 ### Soal
 Lalu buat untuk setiap request yang mengandung /its akan di proxy passing menuju halaman https://www.its.ac.id
 
-### Jawaban
+### Testing
+Masuk ke Eisen, lakukan bash no11.sh
+![11 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f73ef586-c6a3-48a7-9b80-ea9605cce94c)
+
+Kemudian, masuk ke Revolte dan jalankan lynx www.granz.channel.B04.com/its
+![11 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f8c9113c-8357-4b68-a50d-ac2716df890e)
+
+Masukkan username netics
+![11 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4a0179ac-53b7-4377-b528-58f131de1656)
+
+Masukkan password ajkB04 dan ketik Y untuk allow cookies
+![11 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/75e796e7-2a60-4ac3-b072-7402bd46efb4)
+
+
 
 ### ⭐ Nomor 12
 ### Soal
 Selanjutnya LB ini hanya boleh diakses oleh client dengan IP [Prefix IP].3.69, [Prefix IP].3.70, [Prefix IP].4.167, dan [Prefix IP].4.168.
 
-### Jawaban
+### Testing
+Masuk ke node Himmel dan lakukan bash no12.sh
+![12 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/176bd4b6-e510-48e8-9436-5f1ed65b1437)
+
+Masuk ke node Eisen dan lakukan bash no12.sh
+
+![12 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/554fcbef-5f01-487f-9843-fb5452e47a82)
+
+Restart node Richter
+![12 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/5b7c7a82-5047-478e-add5-bebaaa809387)
+
+![12 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d4b1873c-edfd-4733-8015-affbc3766d83)
+
+Masuk ke node Richter dan jalankan ip a
+![12 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/795ffaa1-2543-4057-aa10-b0c3c54adada)
+IP di akhir sudah menjadi 3.69
+Kemudian di Richter jalankan lynx  www.granz.channel.B04.com/its 
+![12 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/3aabcccf-96a8-40e8-b2d2-505bcc5b553a)
+
+![12 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f84b7ab4-561f-4961-bf20-cd61343892d9)
+
+Sekarang masuk ke Revolte jalankan lynx  www.granz.channel.B04.com/its  (harusnya gabisa dijalankan karena restricted)
+![12 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/695ccc2d-f0e6-4c07-bb1a-a2bb808baac0)
 
 ### ⭐ Nomor 13
 ### Soal
 Semua data yang diperlukan, diatur pada Denken dan harus dapat diakses oleh Frieren, Flamme, dan Fern.
 
-### Jawaban
+### Testing
+Masuk ke node Denken jalankan bash 'no13.sh'
+![13 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d5cace53-a575-4545-b69c-05239b3b24da)
+
+Masukkan password “passwordB04“
+![13 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0cef3064-5a0d-4da0-9905-d474f0273b8f)
+
+Sekarang masuk ke salah satu worker Laravel, sebagai contoh di worker Flamme dan jalankan bash configlaravelworker.sh
+
+Dan jalankan di terminal secara manual:
+
+mariadb --host=192.180.2.1 --port=3306 --user=kelompokB04 --password=passwordB04 dbkelompokB04 -e "SHOW DATABASES;"
+![13 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/eb4c0e60-3936-43a2-b8dd-9e9562e89c36)
 
 ### ⭐ Nomor 14
 ### Soal
 Frieren, Flamme, dan Fern memiliki Riegel Channel sesuai dengan quest guide berikut. Jangan lupa melakukan instalasi PHP8.0 dan Composer
 
-### Jawaban
+### Testing
+Masuk ke node Flamme, dan jalankan bash no14.sh
+![14 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/f916dab2-038b-4d34-9348-1fa766541be6)
+
+Selanjutnya di terminal lynx localhost:8002 akan muncul seperti ini
+![14 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1a8371e8-41e3-4e6c-bddb-f109d3860cd3)
+
+Kemudian masuk ke Laravel worker, sebagai contoh Sein dan lakukan lynx 192.180.4.2:8002
+![14 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/20d88902-a9b0-4bec-93b9-cc39bf90eece)
+
+
+
+
 
 ### ⭐ Nomor 15
 ### Soal
 Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire POST /auth/register
 
-### Jawaban
+### Testing
+Masuk ke node Sein, lakukan bash no15.sh
+![15 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/0a833218-1adc-4afe-9d52-03f95d1a6a16)
+
+jalankan ab -n 100 -c 10 -p register.json -T application/json http://192.180.4.2:8002/api/auth/register
+![15 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/fa0b962e-346d-452a-bb15-f5c026422f67)
+
+Htop pada flamme
+![15 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4f996c71-dce2-44c5-9191-a45528aeb834)
+
 
 ### ⭐ Nomor 16
 ### Soal
 Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire POST /auth/login
 
-### Jawaban
+### Testing
+Masuk ke node Sein dan lakukan bash no16.sh
+![16 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/cd072720-8a33-4f27-9de7-05def4e02d76)
+
+Jalankan di terminal
+```
+ab -n 100 -c 10 -p login.json -T application/json http://192.180.4.2:8002/api/auth/login
+```
+![16 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/ce2726ef-9f7c-4de6-99a8-3a1732d539cb)
+
+Htop pada flamme
+![16 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/338e7bc8-3aa6-4fb2-8594-91049efd24a6)
 
 ### ⭐ Nomor 17
 ### Soal
 Riegel Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada grimoire GET /me
 
-### Jawaban
+### Testing
+Masuk ke node sein dan jalankan bash no17.sh
+![17 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/168e5817-5890-4535-8e47-5d15f4aec2e3)
+
+Selanjutnya jalankan di terminal
+ab -n 100 -c 10 -H "Authorization: Bearer $token" http://192.180.4.2:8002/api/me 
+![17 12](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4a4db4d1-e7f7-4dbe-a522-4374896f79c4)
+
+Kemudian jalankan htop di Flamme
+![17 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/afa3579e-0983-41dd-ba3d-7a343e39ac78)
+
 
 ### ⭐ Nomor 18
 ### Soal
 Untuk memastikan ketiganya bekerja sama secara adil untuk mengatur Riegel Channel maka implementasikan Proxy Bind pada Eisen untuk mengaitkan IP dari Frieren, Flamme, dan Fern.
 
-### Jawaban
+### Testing
+Masuk ke node  Eisen dan jalankan bash no14.sh
+![18 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/71e08911-030f-43fe-a231-6dd348b8106d)
+
+Masuk ke Heiter dan jalankan bash no18.sh
+![18 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/de2b3620-334c-48fe-9206-e823ffe51389)
+
+Di worker Laravel (misal Flamme) lakukan
+```
+cd /var/www/laravel-praktikum-jarkom
+        chmod -R 777 public
+        chmod -R 777 storage
+```
+![18 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/21ea101e-9b40-4562-b030-12d25e0a53a3)
+
+Masuk ke node Sein jalankan lynx 192.180.4.2:8002
+![18 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1d7c4e2a-664e-471d-adf7-c6d84eeb5a5d)
+
+Sekarang masukkan www.riegel.canyon.B04.com
+![18 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/70e87a8e-e2ea-40e5-8a8a-3d3c8d81612e)
+
+Selanjutnya di sein lakukan 
+```
+ab -n 100 -c 10 -p login.json -T application/json http://www.riegel.canyon.B04.com/api/auth/login
+```
+![18 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/158b4f6f-9380-471e-84e6-ba206cc8dfeb)
 
 ### ⭐ Nomor 19
 ### Soal
@@ -802,15 +944,63 @@ Untuk meningkatkan performa dari Worker, coba implementasikan PHP-FPM pada Frier
 - pm.max_spare_servers
 sebanyak tiga percobaan dan lakukan testing sebanyak 100 request dengan 10 request/second kemudian berikan hasil analisisnya pada Grimoire.
 
-### Jawaban
+### Testing 1
+a. Masuk ke node worker laravel (misal Flamme) dan jalankan no19-1.sh
+![19 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/515b4d03-431a-4dc9-ac2c-c1503cdd4934)
+
+b. Masuk  ke Laravel client (misal sein) dan lakukan
+```
+ab -n 100 -c 10 -p login.json -T application/json http://www.riegel.canyon.B04.com/api/auth/login
+```
+![19 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1d850927-94d2-4840-b94e-76579f804064)
+
+c. Cek htop pada flamme
+![19 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d8e0ea96-bd54-4a54-b2c9-998fdd95a7ac)
+
+### Testing 2
+a. Masuk ke node worker laravel (misal Flamme) dan jalankan no19-2.sh
+![19 4](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/db148441-5b52-4218-a0bd-0b0dadf95539)
+
+b. Masuk  ke Laravel client (misal sein) dan lakukan
+```
+ab -n 100 -c 10 -p login.json -T application/json http://www.riegel.canyon.B04.com/api/auth/login
+```
+![19 5](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/d4c5538b-5523-427c-83dc-dbc280b95e54)
+
+c. Cek htop pada flamme
+![19 6](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/4ac867eb-dcf5-4a7a-bc40-7aed395d9cf0)
+
+### Testing 3
+a. Masuk ke node worker laravel (misal Flamme) dan jalankan no19-3.sh
+![19 7](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/66d6f1e8-750a-40ef-a48d-1ea9f870085e)
+
+b. Masuk  ke Laravel client (misal sein) dan lakukan
+```
+ab -n 100 -c 10 -p login.json -T application/json http://www.riegel.canyon.B04.com/api/auth/login
+```
+![19 8](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/effcceda-e910-4d55-b4cd-0e1bdc19dec1)
+
+c. Cek htop pada flamme
+![19 9](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/c27ae6d2-a8ac-4b0f-a476-95e40283fa07)
+
 
 ### ⭐ Nomor 20
 ### Soal
 Nampaknya hanya menggunakan PHP-FPM tidak cukup untuk meningkatkan performa dari worker maka implementasikan Least-Conn pada Eisen. Untuk testing kinerja dari worker tersebut dilakukan sebanyak 100 request dengan 10 request/second.
 
-### Jawaban
+### Testing
+Masuk ke node eisen dan jalankan bash no20.sh
+![20 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/72a92757-79c7-4a68-8982-c672f1ccbaf1)
 
+Masuk ke node Sein dan jalankan
+```
+ab -n 100 -c 10 -p login.json -T application/json http://www.riegel.canyon.B04.com/api/auth/login
+```
+![20 2](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/14f97615-0d54-4f43-bb5f-0127be1a5be3)
 
+Cek htop pada flamme
+
+![20 3](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/10ed9cb1-b731-4b09-a48c-6fb67a2d223c)
 
 
 
