@@ -441,8 +441,7 @@ Untuk mengujinya kami melakukan testing di client Richter dengan menjalankan 2 p
 ```
 ping riegel.canyon.b04.com
 ```
-<img width="311" alt="image" src="https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/1b8cc0bb-ea43-49c0-b5e9-6825c3bf0409">
-
+![1 1](https://github.com/rayrednet/Jarkom-Modul-3-B04-2023/assets/89269231/bde011cd-86b6-4394-9e79-7e980119fd70)
 ```
 ping granz.channel.b04.com
 ```
