@@ -87,61 +87,31 @@ d. Pilih server type: Run this Docker container locally
 	# DHCP config for eth0
 		auto eth0
 		iface eth0 inet dhcp
-			up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 198.180.0.0/16
+			up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.180.0.0/16
 
 		# Static config for eth1
 		auto eth1
 		iface eth1 inet static
-			address 198.180.1.100
+			address 192.180.1.100
 			netmask 255.255.255.0
 
 		# Static config for eth2
 		auto eth2
 		iface eth2 inet static
-			address 198.180.2.100
+			address 192.180.2.100
 			netmask 255.255.255.0
 
 		# Static config for eth3
 		auto eth3
 		iface eth3 inet static
-			address 198.180.3.100
+			address 192.180.3.100
 			netmask 255.255.255.0
 
 		# Static config for eth4
 		auto eth4
 		iface eth4 inet static
-			address 198.180.4.100
+			address 192.180.4.100
 			netmask 255.255.255.0
-
-Switch 1
-Himmel (DHCP Server)
-		auto eth0
-		iface eth0 inet static
-			address 198.180.1.1
-			netmask 255.255.255.0
-			gateway 198.180.1.100
-
-Heiter (DNS Server)
-		auto eth0
-		iface eth0 inet static
-			address 198.180.1.2
-			netmask 255.255.255.0
-			gateway 198.180.1.100
-   
-Switch 2
-Denken (Database Server)
-	auto eth0
-	iface eth0 inet static
-		address 198.180.2.1
-		netmask 255.255.255.0
-		gateway 198.180.2.100
-
-Eisen (Load Balancer)
-	auto eth0
-	iface eth0 inet static
-		address 198.180.2.2
-		netmask 255.255.255.0
-		gateway 198.180.2.100
 
 Switch 3
 Revolte (client)
